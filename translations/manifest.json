@@ -5,5 +5,12 @@
     "title": "Translation of the meanings of the Noble Qur'an",
     "version": "v1.0.19",
     "fileName": "english_rwwad.json"
+  },
+  {
+    "id": "persian_rwwad",
+    "language": "Persian",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.1.3",
+    "fileName": "persian_rwwad.json"
   }
 ]
