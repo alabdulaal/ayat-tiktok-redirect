@@ -4,13 +4,13 @@
     "language": "English",
     "title": "Translation of the meanings of the Noble Qur'an",
     "version": "v1.0.19",
-    "fileName": "english_rwwad.json"
+    "fileName": "english_rwwad_v1.0.19.json"
   },
   {
     "id": "persian_rwwad",
     "language": "Persian",
     "title": "Translation of the meanings of the Noble Qur'an",
     "version": "v1.1.3",
-    "fileName": "persian_rwwad.json"
+    "fileName": "persian_rwwad_v1.1.3.json"
   }
 ]
