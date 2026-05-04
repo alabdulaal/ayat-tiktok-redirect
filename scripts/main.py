@@ -4,7 +4,7 @@ Automated script to process all XML files.
 Drop your downloaded XML files into the root of the repo or a 'xml_translations' folder, 
 and run this script. It will:
 1. Convert all XML files to JSON
-2. Remove footprints from all of them
+2. Remove footnotes from all of them
 3. Automatically generate the manifest.json
 """
 
@@ -45,7 +45,13 @@ def main():
             # Convert XML to JSON Data
             data = convert_xml_to_json.parse_translation_xml(xml_path)
             translation_id = data["meta"]["id"]
-            output_json_path = os.path.join(translations_dir, f"{translation_id}.json")
+            output_json_path = os.path.join(
+                translations_dir,
+                convert_xml_to_json.versioned_output_filename(
+                    translation_id,
+                    data["meta"]["version"]
+                )
+            )
             
             # Write JSON file
             import json
