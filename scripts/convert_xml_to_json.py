@@ -10,7 +10,7 @@ Example:
     python3 convert_xml_to_json.py english_rwwad_v1.0.19-xml.1.xml ../translations/
 
 This will produce:
-    ../translations/english.json
+    ../translations/english_rwwad_v1.0.19.json
 """
 
 import xml.etree.ElementTree as ET
@@ -18,6 +18,12 @@ import json
 import sys
 import os
 import re
+
+
+def versioned_output_filename(translation_id: str, version: str) -> str:
+    """Build a stable, URL-safe filename that keeps old versions publishable."""
+    safe_version = re.sub(r"[^A-Za-z0-9._-]+", "_", version).strip("_") or "v1.0.0"
+    return f"{translation_id}_{safe_version}.json"
 
 
 def parse_translation_xml(xml_path: str) -> dict:
@@ -105,7 +111,10 @@ def main():
     data = parse_translation_xml(xml_path)
 
     translation_id = data["meta"]["id"]
-    output_path = os.path.join(output_dir, f"{translation_id}.json")
+    output_path = os.path.join(
+        output_dir,
+        versioned_output_filename(translation_id, data["meta"]["version"])
+    )
 
     print(f"Language: {data['meta']['language']}")
     print(f"ID: {translation_id}")
