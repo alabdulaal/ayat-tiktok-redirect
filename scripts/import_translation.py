@@ -40,7 +40,13 @@ def main():
         # let's write a direct logic here for step 1 using the imported module.
         data = convert_xml_to_json.parse_translation_xml(xml_path)
         translation_id = data["meta"]["id"]
-        output_json_path = os.path.join(translations_dir, f"{translation_id}.json")
+        output_json_path = os.path.join(
+            translations_dir,
+            convert_xml_to_json.versioned_output_filename(
+                translation_id,
+                data["meta"]["version"]
+            )
+        )
         
         with open(output_json_path, "w", encoding="utf-8") as f:
             import json
@@ -50,7 +56,7 @@ def main():
     finally:
         sys.argv = original_argv
 
-    # Step 2: Remove footprints
+    # Step 2: Remove footnotes
     print("\n--- Step 2: Removing footnotes ---")
     remove_footnotes.process_file(output_json_path)
 
