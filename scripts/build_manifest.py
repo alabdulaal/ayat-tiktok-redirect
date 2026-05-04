@@ -2,11 +2,29 @@ import os
 import glob
 import json
 import argparse
+import re
+
+def compare_versions(lhs, rhs):
+    lhs_parts = [int(part) for part in re.findall(r"\d+", lhs or "")]
+    rhs_parts = [int(part) for part in re.findall(r"\d+", rhs or "")]
+    max_len = max(len(lhs_parts), len(rhs_parts))
+    lhs_parts.extend([0] * (max_len - len(lhs_parts)))
+    rhs_parts.extend([0] * (max_len - len(rhs_parts)))
+
+    if lhs_parts == rhs_parts:
+        return 0
+    return 1 if lhs_parts > rhs_parts else -1
+
+def is_newer_entry(candidate, existing):
+    version_comparison = compare_versions(candidate["version"], existing["version"])
+    if version_comparison != 0:
+        return version_comparison > 0
+    return candidate["fileName"] > existing["fileName"]
 
 def generate_manifest(translations_dir="translations"):
-    manifest = []
+    manifest_by_id = {}
     
-    # Grab all json files except manifest.json
+    # Grab all JSON files and publish the newest version for each stable translation id.
     json_files = glob.glob(os.path.join(translations_dir, "*.json"))
     
     for file_path in json_files:
@@ -20,17 +38,21 @@ def generate_manifest(translations_dir="translations"):
                 
             if "meta" in data:
                 meta = data["meta"]
-                manifest.append({
+                entry = {
                     "id": meta["id"],
                     "language": meta["language"],
                     "title": meta.get("title", ""),
                     "version": meta.get("version", "v1.0.0"),
                     "fileName": filename
-                })
+                }
+                existing = manifest_by_id.get(entry["id"])
+                if existing is None or is_newer_entry(entry, existing):
+                    manifest_by_id[entry["id"]] = entry
         except Exception as e:
             print(f"Error parsing {filename}: {e}")
             
     # Sort manifest for consistency (alphabetical by language then id)
+    manifest = list(manifest_by_id.values())
     manifest.sort(key=lambda x: (x["language"], x["id"]))
     
     manifest_path = os.path.join(translations_dir, "manifest.json")
