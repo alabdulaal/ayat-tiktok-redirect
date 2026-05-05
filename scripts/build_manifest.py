@@ -43,8 +43,7 @@ def generate_manifest(translations_dir="translations"):
                     "language": meta["language"],
                     "title": meta.get("title", ""),
                     "version": meta.get("version", "v1.0.0"),
-                    "fileName": filename,
-                    "fileSize": os.path.getsize(file_path)
+                    "fileName": filename
                 }
                 existing = manifest_by_id.get(entry["id"])
                 if existing is None or is_newer_entry(entry, existing):
