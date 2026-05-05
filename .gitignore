@@ -1,2 +1,4 @@
 xml_translations/
 .DS_Store
+__pycache__/
+*.py[cod]
