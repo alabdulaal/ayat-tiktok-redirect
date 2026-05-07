@@ -1,5 +1,21 @@
 [
   {
+    "id": "croatian_rwwad",
+    "language": "Croatian",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.1",
+    "fileName": "croatian_rwwad_v1.0.1.json",
+    "fileSize": 1165622
+  },
+  {
+    "id": "dutch_center",
+    "language": "Dutch",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v2.0.10",
+    "fileName": "dutch_center_v2.0.10.json",
+    "fileSize": 1408553
+  },
+  {
     "id": "english_rwwad",
     "language": "English",
     "title": "Translation of the meanings of the Noble Qur'an",
@@ -8,11 +24,59 @@
     "fileSize": 1223706
   },
   {
+    "id": "lithuanian_rwwad",
+    "language": "Lithuanian",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.8",
+    "fileName": "lithuanian_rwwad_v1.0.8.json",
+    "fileSize": 1539036
+  },
+  {
+    "id": "pashto_rwwad",
+    "language": "Pashto",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.1",
+    "fileName": "pashto_rwwad_v1.0.1.json",
+    "fileSize": 1726325
+  },
+  {
     "id": "persian_rwwad",
     "language": "Persian",
     "title": "Translation of the meanings of the Noble Qur'an",
     "version": "v1.1.3",
     "fileName": "persian_rwwad_v1.1.3.json",
     "fileSize": 1971923
+  },
+  {
+    "id": "serbian_rwwad",
+    "language": "Serbian",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.4",
+    "fileName": "serbian_rwwad_v1.0.4.json",
+    "fileSize": 1707614
+  },
+  {
+    "id": "tajik_arifi",
+    "language": "Tajik",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.2",
+    "fileName": "tajik_arifi_v1.0.2.json",
+    "fileSize": 2172477
+  },
+  {
+    "id": "turkish_rwwad",
+    "language": "Turkish",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.4",
+    "fileName": "turkish_rwwad_v1.0.4.json",
+    "fileSize": 1279423
+  },
+  {
+    "id": "uzbek_rwwad",
+    "language": "Uzbek",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.4",
+    "fileName": "uzbek_rwwad_v1.0.4.json",
+    "fileSize": 1845401
   }
 ]
