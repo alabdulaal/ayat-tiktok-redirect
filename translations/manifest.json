@@ -24,12 +24,20 @@
     "fileSize": 1223706
   },
   {
+    "id": "french_montada",
+    "language": "French",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.0",
+    "fileName": "french_montada_v1.0.0.json",
+    "fileSize": 1374130
+  },
+  {
     "id": "lithuanian_rwwad",
     "language": "Lithuanian",
     "title": "Translation of the meanings of the Noble Qur'an",
     "version": "v1.0.8",
     "fileName": "lithuanian_rwwad_v1.0.8.json",
-    "fileSize": 1539036
+    "fileSize": 1514098
   },
   {
     "id": "pashto_rwwad",

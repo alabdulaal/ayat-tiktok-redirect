@@ -13,6 +13,7 @@ import sys
 import glob
 import convert_xml_to_json
 import remove_footnotes
+import remove_aya_numbers
 import build_manifest
 
 def main():
@@ -62,6 +63,10 @@ def main():
             
             # Remove footnotes
             remove_footnotes.process_file(output_json_path)
+
+            # Remove aya number prefixes (e.g. "1. ", "100. ") if detected
+            remove_aya_numbers.process_file(output_json_path)
+
             processed_jsons.append(output_json_path)
             
         except Exception as e:
