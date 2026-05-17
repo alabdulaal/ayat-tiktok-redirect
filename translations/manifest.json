@@ -1,5 +1,13 @@
 [
   {
+    "id": "azeri_musayev",
+    "language": "Azeri",
+    "title": "Translation of the meanings of the Noble Qur'an",
+    "version": "v1.0.4",
+    "fileName": "azeri_musayev_v1.0.4.json",
+    "fileSize": 1376812
+  },
+  {
     "id": "croatian_rwwad",
     "language": "Croatian",
     "title": "Translation of the meanings of the Noble Qur'an",
